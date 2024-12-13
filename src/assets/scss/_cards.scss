@@ -1,0 +1,117 @@
+.general-taks-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    .tasks-container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        border-radius: 16px;
+
+        &--todo {
+            background-color: $selago;
+            border: 1px solid $moon-raker;
+        }
+
+        &--done {
+            background-color: $negroni;
+            border: 1px solid $serenade;
+        }
+
+        &__title {
+            font-size: 24px;
+            font-weight: 600;
+
+            &--todo {
+                color: $chathams-blue;
+            }
+
+            &--done {
+                color: $brown;
+            }
+        }
+
+        &__header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        &__header-icon {
+            &--todo {
+                color: $chathams-blue;
+            }
+
+            &--done {
+                color: $brown;
+            }
+        }
+    }
+}
+
+.task-card {
+    background-color: $white;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &__icon-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__action-icon {
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &--check {
+            font-weight: 600;
+        }
+
+        &--edit {}
+
+        &--delete {}
+    }
+
+    &__description {
+        text-wrap: pretty;
+        margin: 0;
+        font-size: 14px;
+        color: $boulder;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: end;
+        margin: 0px 16px 16px 16px;
+    }
+
+    &__due-date {
+        margin: 0;
+        font-size: 12px;
+        color: $santas-gray;
+    }
+
+    &__date-span {
+        margin: 0;
+        font-size: 12px;
+        color: $santas-gray;
+
+    }
+
+
+}

@@ -1,1 +1,23 @@
-<app-task-card></app-task-card>
+<div class="general-taks-container">
+    <div class="tasks-container tasks-container--todo">
+
+        <div class="tasks-container__header">
+            <mat-icon
+                class="tasks-container__header-icon tasks-container__header-icon--todo">check_box_outline_blank</mat-icon>
+            <h2 class="tasks-container__title tasks-container__title--todo">To Do</h2>
+        </div>
+        @for (item of [1,2,3,4]; track $index) {
+        <app-task-card></app-task-card>
+        }
+    </div>
+
+    <div class="tasks-container tasks-container--done">
+        <div class="tasks-container__header">
+            <mat-icon class="tasks-container__header-icon tasks-container__header-icon--done">check_box</mat-icon>
+            <h2 class="tasks-container__title tasks-container__title--done">Done</h2>
+        </div>
+        @for (item of [1,2,3,4]; track $index) {
+        <app-task-card></app-task-card>
+        }
+    </div>
+</div>
