@@ -1,3 +1,10 @@
+<header class="home-page-header">
+    <h1>Tasks</h1>
+    <button class="btn-add-task" mat-flat-button>
+        <mat-icon>add</mat-icon>
+        New task
+    </button>
+</header>
 <div class="general-taks-container">
     <div class="tasks-container tasks-container--todo">
 
@@ -6,8 +13,8 @@
                 class="tasks-container__header-icon tasks-container__header-icon--todo">check_box_outline_blank</mat-icon>
             <h2 class="tasks-container__title tasks-container__title--todo">To Do</h2>
         </div>
-        @for (item of [1,2,3,4]; track $index) {
-        <app-task-card></app-task-card>
+        @for (task of tasksToDo; track task.id) {
+        <app-task-card [task]="task" [isDone]="false"></app-task-card>
         }
     </div>
 
@@ -16,8 +23,8 @@
             <mat-icon class="tasks-container__header-icon tasks-container__header-icon--done">check_box</mat-icon>
             <h2 class="tasks-container__title tasks-container__title--done">Done</h2>
         </div>
-        @for (item of [1,2,3,4]; track $index) {
-        <app-task-card></app-task-card>
+        @for (task of tasksDone; track task.id) {
+        <app-task-card [task]="task" [isDone]="true"></app-task-card>
         }
     </div>
 </div>

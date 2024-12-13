@@ -1,6 +1,12 @@
-.general-taks-container {
+.home-page-header {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.general-taks-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 
     .tasks-container {

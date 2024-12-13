@@ -1,0 +1,10 @@
+.btn-add-task {
+    border-radius: 8px;
+
+    &:hover {
+        mat-icon {
+            transition: all 0.5s ease;
+            transform: rotate(180deg);
+        }
+    }
+}
