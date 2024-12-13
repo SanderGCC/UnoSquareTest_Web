@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Add task</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="taskForm" class="task-form">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Task name</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+
+        <div class="task-form__subContainer">
+            <mat-form-field appearance="outline">
+                <mat-label>Select a date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dueDate">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-slide-toggle formControlName="complete"></mat-slide-toggle>
+        </div>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Task description</mat-label>
+            <textarea formControlName="description" matInput></textarea>
+        </mat-form-field>
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button cdkFocusInitia (click)="addTask()" [disabled]="taskForm.invalid">Add</button>
+</mat-dialog-actions>

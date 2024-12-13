@@ -1,0 +1,17 @@
+.task-form {
+    margin-top: 10px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &__subContainer {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        mat-slide-toggle {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    }
+}

@@ -32,6 +32,11 @@ export class TasksApiService {
       )
   }
 
+  public addTask(task: Task): Observable<Task> {
+    if (!task?.complete) task.complete = false
+    return this._http.post<Task>(`${this._baseApi}tasks`, task)
+  }
+
   public deleteTaskById(id: number): Observable<boolean> {
     return this._http.delete<boolean>(`${this._baseApi}tasks/${id}`)
   }
