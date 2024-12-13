@@ -1,10 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { first } from 'rxjs';
 import { TaskCardComponent } from "../../components/task-card/task-card.component";
-import { Task } from '../../interfaces/task.interface';
-import { TasksApiService } from '../../services/tasks-api.service';
+import { TasksStore } from '../../store/tasks.store';
 @Component({
   selector: 'app-home',
   imports: [
@@ -17,26 +15,10 @@ import { TasksApiService } from '../../services/tasks-api.service';
 })
 export class HomeComponent {
 
-  public tasksDone: Task[] = []
-
-  public tasksToDo: Task[] = []
-
-  private readonly _tasksService = inject(TasksApiService)
+  public tasksStore = inject(TasksStore)
 
   ngOnInit(): void {
-    this._getTasks();
-  }
-
-  private _getTasks(): void {
-    this._tasksService.getTasksByState()
-      .pipe(
-        first()
-      ).subscribe(({ toDo, done }) => this._setTasksByState(toDo, done))
-  }
-
-  private _setTasksByState(todo: Task[], done: Task[]): void {
-    this.tasksToDo = [...todo]
-    this.tasksDone = [...done]
+    this.tasksStore.loadTasks(null)
   }
 
 }
