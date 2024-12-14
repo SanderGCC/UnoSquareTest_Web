@@ -15,6 +15,7 @@
         padding: 20px;
         gap: 10px;
         border-radius: 16px;
+        height: min-content;
 
         &--todo {
             background-color: $selago;
