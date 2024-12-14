@@ -4,9 +4,9 @@
         <div class="task-card__icon-container">
             <mat-icon class="task-card__action-icon task-card__action-icon--check"
                 (click)="changeStateTask(task)">{{isDone ? 'do_not_disturb_on': 'check_circle'}}</mat-icon>
-            <mat-icon class="task-card__action-icon task-card__action-icon--edit">edit</mat-icon>
+            <mat-icon class="task-card__action-icon task-card__action-icon--edit" (click)="updateTask()">edit</mat-icon>
             <mat-icon class="task-card__action-icon task-card__action-icon--delete"
-                (click)="deleteTaskById(task.id)">delete</mat-icon>
+                (click)="deleteTaskById()">delete</mat-icon>
         </div>
     </mat-card-header>
     <mat-card-content class="task-card__content-description">

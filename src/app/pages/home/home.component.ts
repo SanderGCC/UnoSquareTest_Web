@@ -25,7 +25,6 @@ export class HomeComponent {
     this.tasksStore.loadTasks(null)
   }
 
-
   public addTask(): void {
     this._dialog.open(DialogTaskComponent);
   }

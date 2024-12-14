@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Add task</h2>
+<h2 mat-dialog-title>{{!!data ?'Update task' : 'Add task'}}</h2>
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="taskForm" class="task-form">
 
@@ -26,5 +26,9 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
+    @if (!!data) {
+    <button mat-button cdkFocusInitia (click)="updateTask()" [disabled]="taskForm.invalid">Update</button>
+    } @else {
     <button mat-button cdkFocusInitia (click)="addTask()" [disabled]="taskForm.invalid">Add</button>
+    }
 </mat-dialog-actions>
